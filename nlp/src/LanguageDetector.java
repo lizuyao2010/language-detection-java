@@ -71,9 +71,9 @@ public class LanguageDetector {
         return predictList.get(0).getLabel();
     }
     public static void main(String[] args) throws IOException, ParseException {
-        final String modelfile="nlp/lang";
+        final String modelfile="nlp/lang"; // directory contains pretrained model
         LanguageDetector languageDetector =new LanguageDetector(modelfile);
-        final String testfile="nlp/test/test.txt";
+        final String testfile="nlp/test/test.txt"; // change the test file to test the program
         BufferedReader br = new BufferedReader(new FileReader(testfile));
         String line=null;
         String s;
