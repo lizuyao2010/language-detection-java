@@ -1,2 +1,3 @@
 java version of language detector
-java LanguageDetector nlp/lang testfile
+#Run
+  java LanguageDetector nlp/lang testfile
