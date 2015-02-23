@@ -73,7 +73,7 @@ public class LanguageDetector {
     public static void main(String[] args) throws IOException, ParseException {
         final String modelfile="nlp/lang";
         LanguageDetector languageDetector =new LanguageDetector(modelfile);
-        final String testfile=args[0];
+        final String testfile="nlp/test/test.txt";
         BufferedReader br = new BufferedReader(new FileReader(testfile));
         String line=null;
         String s;
