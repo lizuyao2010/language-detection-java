@@ -1,7 +1,4 @@
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.util.*;
 
 import org.json.simple.JSONObject;
@@ -73,8 +70,7 @@ public class LanguageDetector {
     public static void main(String[] args) throws IOException, ParseException {
         final String modelfile="nlp/lang"; // directory contains pretrained model
         LanguageDetector languageDetector =new LanguageDetector(modelfile);
-        final String testfile="nlp/test/test.txt"; // change the test file to test the program
-        BufferedReader br = new BufferedReader(new FileReader(testfile));
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         String line=null;
         String s;
         s = "";
@@ -82,6 +78,6 @@ public class LanguageDetector {
             s += line;
         }
         String predict_label= languageDetector.predict(s,2);
-        System.out.println("predicted label: "+predict_label);
+        System.out.println("predicted language: "+predict_label);
     }
 }
