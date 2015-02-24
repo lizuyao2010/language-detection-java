@@ -49,7 +49,9 @@ public class LanguageDetector {
         {
             vocabularySize+=lp.getN_words().get(order-1);
         }
-        List<Pair> predictList=new ArrayList<Pair>();
+        //List<Pair> predictList=new ArrayList<Pair>();
+        double bestScore=-Double.MAX_VALUE;
+        String bestLabel="";
         for (LangProfile lp : langProfiles)
         {
             double totalScore=0.0;
@@ -62,10 +64,15 @@ public class LanguageDetector {
                     totalScore += Math.log( (double)(freq.get(feature))/ (lp.getN_words().get(order - 1)));
                 }
             }
-            predictList.add(new Pair(totalScore,lp.getName()));
+            if (totalScore > bestScore) {
+                bestScore = totalScore;
+                bestLabel = lp.getName();
+            }
+            //predictList.add(new Pair(totalScore, lp.getName()));
         }
-        Collections.sort(predictList);
-        return predictList.get(0).getLabel();
+        //Collections.sort(predictList);
+        //return predictList.get(0).getLabel();
+        return bestLabel;
     }
     public static void main(String[] args) throws IOException, ParseException {
         final String modelfile="nlp/lang"; // directory contains pretrained model

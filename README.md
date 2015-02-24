@@ -8,6 +8,8 @@ features are bigrams in the text.
 pretrained model using bag of n-grams
 # usage
 java -cp out/production/nlp:json-simple-1.1.jar LanguageDetector < nlp/test/test.txt
+# Accuracy
+I used nlp/test/europarl.test file to test my detector, the accuracy is 0.962.
 
 ## Language Support
 
