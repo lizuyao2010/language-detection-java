@@ -9,7 +9,10 @@ pretrained model using bag of n-grams
 # usage
 java -cp out/production/nlp:json-simple-1.1.jar LanguageDetector < nlp/test/test.txt
 # Accuracy
-I used nlp/test/europarl.test file to test my detector, the accuracy is 0.962.
+I used europarl.test file to test my detector, the accuracy is 0.962.
+This is a test data set for 21 languages based on Europarl Parallel Corpus ( http://www.statmt.org/europarl/ ).
+It randomly samples 1000 sentences(lines) for each language.
+Each line forms "[language code]\t[plain text by UTF-8]" to be avaiable for batch test tool of this langdetect library.
 
 ## Language Support
 
