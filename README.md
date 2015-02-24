@@ -7,7 +7,7 @@ features are bigrams in the text.
 # model
 pretrained model using bag of n-grams
 # usage
-import module into intellij and run LanguageDetector.java
+java -cp out/production/nlp:json-simple-1.1.jar LanguageDetector < nlp/test/test.txt
 
 ## Language Support
 
